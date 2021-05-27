@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h6 class="display-6"><%= @job.name %></h6>
+
+  <p class="fs-6">
+    <strong>Content:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @job.content %>
+  </p>
+
+  <p class="fs-6">
+    <strong>Require:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @job.require %>
+  </p>
+
+  <p class="fs-6">
+    <strong>Benefits:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @job.benefits %>
+  </p>
+
+
+  <p class="fs-6">
+    <strong>Wage:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @job.wage %>
+  </p>
+
+
+  <p class="fs-6">
+    <strong>Company:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @company.name %>
+  </p>
+  <button class= "btn btn-primary position-absolute  start-50">現在應徵</button>
+</div>
+

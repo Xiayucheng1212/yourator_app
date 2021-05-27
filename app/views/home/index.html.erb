@@ -1,0 +1,12 @@
+
+
+<section class="container bg-light company-container">
+    <div class="title"><span class="display-6">精選公司</span> <span><%= link_to "更多公司" , companies_path, class: "link-dark"%></span></div>
+
+    <%= render 'home/selectedCom', company: @company %>
+</section>
+
+<section class="container bg-light ">
+    <div  class="title"><span class="display-6">精選職缺</span> <span><%= link_to "更多職缺" , jobs_path, class: "link-dark"%></span></div>
+    <%= render 'home/selectedJob' %>
+</section>

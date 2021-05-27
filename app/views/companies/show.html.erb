@@ -1,0 +1,51 @@
+
+
+<div class="container">
+  <h6 class="display-6"><%= @company.name %></h6>
+  <p class="fs-6">
+    <strong>Content:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @company.content %>
+  </p>
+
+
+  <p class="fs-6">
+    <strong>Concept:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @company.concept %>
+  </p>
+
+  <p class="fs-6">
+    <strong>Media:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @company.media %>
+  </p>
+
+  <p class="fs-6">
+    <strong>Benefits:</strong>
+  </p>
+
+  <p class="fw-light">
+    <%= @company.benefits %>
+  </p>
+
+  <p class="fs-6">
+    <strong>目前職缺</strong>
+    <% @jobs.each do |job| %>
+      <% if job.status == 1 %>
+        <div class="card">
+          <div class="card-body">
+            <span class="job-item"><%= link_to job.name, job_path(id: job.id) %></span> <span class="job-item"><%= job.content %></span><span class="job-item"><%= job.wage %></span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </p>
+</div>
+

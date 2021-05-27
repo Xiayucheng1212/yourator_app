@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+ nav {
+     margin-bottom: 20px;
+ }
+
+ .container{
+    padding: 20px;
+ }
+
+ .title{
+     margin-bottom: 10px;
+ }
+
+ .company-container{
+    margin-bottom: 20px;
+ }
+
+ .job-item{
+     margin: 0 30px;
+ }
+
+ .link-to{
+     color: white;
+ }
+
+ .link-to:hover{
+     color: white;
+ }
+
+ .bin-image{
+     width: 25px;
+     height: 25px;
+ }
+
+ .bin-image:hover{
+     cursor: pointer;
+ }

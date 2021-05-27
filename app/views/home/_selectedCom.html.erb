@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-around">
+
+    <% @companies.each do |company| %>
+        <div class="card" style="width: 14rem;">
+            <div class="card-body">
+                <h5 class="card-title"><%= company.name %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= company.content %></h6>
+                <a href="#" class="card-link"><%= link_to "更多詳情", company_path(id: company.id), method: "get" %></a>
+            </div>
+        </div>
+       
+    <% end %>
+        
+    </div>

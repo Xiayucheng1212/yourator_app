@@ -1,0 +1,56 @@
+<div class="container">
+  <%= form_with(model: @job) do |form| %>
+    <% if @job.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@job.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+        <ul>
+          <% @job.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="mb-3">
+      
+      <label for="disabledTextInput" class="form-label">公司名稱</label>
+      <p class="fs-5"><%= @company.name %></p>
+      <%= form.number_field :company_id, class: "form-control", value: @company.id ,type: :hidden%>
+      
+    </div>
+
+    <%= form.number_field :status, class: "form-control", value: 1,type: :hidden%>
+
+    <div class="mb-3">
+      <%= form.label "職缺名稱", class: "form-label" %>
+      <%= form.text_area :name, class: "form-control" %>
+    </div>
+    
+    <div class="mb-3">
+      <%= form.label "工作內容", class: "form-label" %>
+      <%= form.text_area :content, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label "條件要求", class: "form-label" %>
+      <%= form.text_area :require, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label "公司福利", class: "form-label" %>
+      <%= form.text_area :benefits, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label "薪資範圍", class: "form-label" %>
+      <%= form.number_field :wage, class: "form-control" %>
+    </div>
+
+    
+    <div >
+      <%= form.submit "存檔" ,class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+
+</div>

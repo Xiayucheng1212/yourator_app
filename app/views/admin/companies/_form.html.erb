@@ -1,0 +1,40 @@
+<div class="container">
+  <%= form_with(model: @company) do |form| %>
+    <% if @company.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+        <ul>
+          <% @company.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label "公司介紹", class: "form-label" %>
+      <%= form.text_area :content, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label "公司理念", class: "form-label" %>
+      <%= form.text_area :concept, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label "媒體報導", class: "form-label" %>
+      <%= form.text_area :media, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label "薪資福利", class: "form-label" %>
+      <%= form.text_area :benefits, class: "form-control" %>
+    </div>
+
+    <div >
+      <%= form.submit "存檔" ,class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+</div>

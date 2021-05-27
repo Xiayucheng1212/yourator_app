@@ -1,0 +1,24 @@
+
+
+<p>
+  <strong>Content:</strong>
+  <%= @company.content %>
+</p>
+
+<p>
+  <strong>Concept:</strong>
+  <%= @company.concept %>
+</p>
+
+<p>
+  <strong>Media:</strong>
+  <%= @company.media %>
+</p>
+
+<p>
+  <strong>Benefits:</strong>
+  <%= @company.benefits %>
+</p>
+
+<%= link_to 'Edit', edit_admin_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
