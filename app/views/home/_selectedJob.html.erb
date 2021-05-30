@@ -1,11 +1,13 @@
-<div class="d-flex justify-content-around">
+<div class="d-flex justify-content-around flex-wrap">
     <% @jobs.each do |job| %>
-        <div class="card" style="width: 14rem;">
-            <div class="card-body">
-                <h5 class="card-title"><%= job.name %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= job.content %></h6>
-                <a href="#" class="card-link"><%= link_to "更多詳情", job_path(id: job.id), method: "get"  %></a>
+        <% if (job.status == 1) %>
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= job.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= job.content %></h6>
+                    <a href="#" class="card-link"><%= link_to "更多詳情", job_path(id: job.id), method: "get"  %></a>
+                </div>
             </div>
-        </div>
+        <% end %>
     <% end %>
 </div>

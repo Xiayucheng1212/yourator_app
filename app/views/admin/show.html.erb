@@ -16,13 +16,16 @@
             <tbody>
             <% @company.jobs.each do |job| %>
                 <tr>
-                <td><%= job.name %></td>
+                <td><%= link_to job.name, edit_admin_job_path(job.id) %></td>
                 <td><%= job.content %></td>
                 <td><%= job.wage %></td>
                 <td>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                    </div>
+                    <% if (job.status == 1) %>
+                        <%= '開放' %>
+                    <% else %>
+                        <%= '不開放' %>
+                    <% end %>
+                    
                 </td>
                 <td>
                    <%= link_to image_tag("bin.png", border: 0,class: "bin-image"), job_path(job.id), method: "delete" %>

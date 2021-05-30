@@ -19,6 +19,8 @@ module Admin
     
       # GET /companies/1/edit
       def edit
+        @job = Job.find(params[:id])
+        @company = Company.find(@job.company.id)
       end
     
       # POST /companies or /companies.json

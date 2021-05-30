@@ -10,22 +10,22 @@
         <th>Require</th>
         <th>Wage</th>
         <th>Company</th>
-        <th colspan="3"></th>
+        <th colspan="1"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @jobs.each do |job| %>
-        <tr>
-          <td><%= job.name %></td>
-          <td><%= job.content %></td>
-          <td><%= job.require %></td>
-          <td><%= job.wage %></td>
-          <td><%= Company.find(job.company_id).name %></td>
-          <td><%= link_to 'Show', job %></td>
-          <td><%= link_to 'Edit', edit_job_path(job) %></td>
-          <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <% if (job.status == 1) %>
+          <tr>
+            <td><%= job.name %></td>
+            <td><%= job.content %></td>
+            <td><%= job.require %></td>
+            <td><%= job.wage %></td>
+            <td><%= link_to Company.find(job.company_id).name, company_path(job.company_id), method: 'get' %></td>
+            <td><%= link_to 'Show', job %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
